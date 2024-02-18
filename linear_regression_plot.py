@@ -13,6 +13,7 @@ def make_lr_plot(x_val:str, y_val:str, dataf:object, jitter:float, plot_title:st
                 x_val, y_val (string): input variables; these should be column names in data.
                 dataf (object): dataframe where each column is a variable and each row is an observation.
                 jitter (float): add uniform random noise of this size to either the x variables. 
+                plot_title (string): The desired title of the plot.
     
             """
         import seaborn as sns
