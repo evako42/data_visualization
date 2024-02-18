@@ -18,7 +18,7 @@ def bland_altman_plot(data1, data2, plot_title:str):
     mean = np.mean([data1, data2], axis=0)
 
     diff = data1 - data2
-    #diff = rand_jitter(diff)
+    diff = rand_jitter(diff)
 
     # Perform the Shapiro-Wilk test to check for normal distribution
     _, p_value = shapiro(diff)
