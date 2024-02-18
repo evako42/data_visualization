@@ -13,6 +13,14 @@ def rand_jitter(arr):
     return arr + np.random.randn(len(arr)) * stdev
 
 def bland_altman_plot(data1, data2, plot_title:str):
+    """
+    This function creates a Bland Altman plot. Additionally, it checks for the normal distribution of the difference data.
+    
+    Args:
+    data1, data2: input variables; these should be column names in data.
+    plot_title (string): The desired title of the plot.
+    
+    """
     data1 = np.asarray(data1)
     data2 = np.asarray(data2)
     mean = np.mean([data1, data2], axis=0)
@@ -45,4 +53,4 @@ def bland_altman_plot(data1, data2, plot_title:str):
     plt.title(f'{plot_title}')
     plt.show()
 
-bland_altman_plot(control_condition, experimental_condition, 'Condition comparison with BA plot')
+bland_altman_plot(control_condition['test1'], experimental_condition['test1'], 'Condition comparison with BA plot')
