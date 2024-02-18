@@ -6,6 +6,16 @@ experimental_condition = pd.read_excel(file_path, sheet_name='data1')
 control_condition = pd.read_excel(file_path, sheet_name='data2')
 
 def make_lr_plot(x_val:str, y_val:str, dataf:object, jitter:float, plot_title:str):
+            """
+            This function creates a scatter plot with the linear regression model of the arguments.
+            Additionally, it prints out the spearman correlation. (NB: could modify so that the function returns instead of prints, or provides this value in the title)
+    
+            Args:
+                x_val, y_val (string): input variables; these should be column names in data.
+                dataf (object): dataframe where each column is a variable and each row is an observation.
+                jitter (float): add uniform random noise of this size to either the x variables. 
+    
+            """
         import seaborn as sns
         import matplotlib.pyplot as plt
 
