@@ -1,5 +1,4 @@
 import pandas as pd
-from scipy.stats import spearmanr
 
 file_path = 'experiment_data.xlsx'
 experimental_condition = pd.read_excel(file_path, sheet_name='data1')
@@ -38,6 +37,7 @@ def make_lr_plot(x_val:str, y_val:str, dataf:object, jitter:float, plot_title:st
         r_squared = r_value**2
 
         # Use spearmanr to calculate the Spearman's rank correlation
+        from scipy.stats import spearmanr
         correlation, p_value = spearmanr(dataf[x_val], dataf[y_val])
 
         # Print the result
